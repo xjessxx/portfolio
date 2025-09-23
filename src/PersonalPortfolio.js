@@ -101,132 +101,132 @@ const PersonalPortfolio = () => {
   return (
     <div className="relative min-h-screen bg-[#f5f2ed]">
       {/* Navigation */}
-<nav
-  className={`fixed top-0 left-0 right-0 z-50 bg-[#f5f2ed]/90 backdrop-blur-sm border-b border-[#d4a574]/20 transition-transform duration-300 ${showNavbar ? 'translate-y-0' : '-translate-y-full'}`}
->
-  <div className="max-w-6xl mx-auto px-6 py-4">
-    <div className="flex justify-between items-center">
-      <div className="text-2xl font-bold text-[#8B4513]">Jessica McIlree</div>
-      
-      {/* Desktop Navigation */}
-      <div className="hidden md:flex space-x-8">
-        {['About', 'Education', 'Projects', 'Skills', 'Experience', 'Contact'].map((item) => (
-          <button
-            key={item}
-            onClick={() => scrollToSection(item.toLowerCase())}
-            className="text-[#8B4513] hover:text-[#A0522D] transition-colors duration-300 font-medium hover:underline"
-          >
-            {item}
-          </button>
-        ))}
-      </div>
-      
-      {/* Mobile Menu Button */}
-      <button 
-        className="md:hidden text-[#8B4513] p-2"
-        onClick={() => setShowMobileMenu(!showMobileMenu)}
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 bg-[#f5f2ed]/90 backdrop-blur-sm border-b border-[#d4a574]/20 transition-transform duration-300 ${showNavbar ? 'translate-y-0' : '-translate-y-full'}`}
       >
-        <div className="w-6 h-6 flex flex-col justify-center space-y-1">
-          <div className="w-full h-0.5 bg-current"></div>
-          <div className="w-full h-0.5 bg-current"></div>
-          <div className="w-full h-0.5 bg-current"></div>
+        <div className="max-w-6xl mx-auto px-6 py-4">
+          <div className="flex justify-between items-center">
+            <div className="text-2xl font-bold text-[#8B4513]">Jessica McIlree</div>
+
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex space-x-8">
+              {['About', 'Education', 'Projects', 'Skills', 'Experience', 'Contact'].map((item) => (
+                <button
+                  key={item}
+                  onClick={() => scrollToSection(item.toLowerCase())}
+                  className="text-[#8B4513] hover:text-[#A0522D] transition-colors duration-300 font-medium hover:underline"
+                >
+                  {item}
+                </button>
+              ))}
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              className="md:hidden text-[#8B4513] p-2"
+              onClick={() => setShowMobileMenu(!showMobileMenu)}
+            >
+              <div className="w-6 h-6 flex flex-col justify-center space-y-1">
+                <div className="w-full h-0.5 bg-current"></div>
+                <div className="w-full h-0.5 bg-current"></div>
+                <div className="w-full h-0.5 bg-current"></div>
+              </div>
+            </button>
+          </div>
+
+          {/* Mobile Navigation Menu */}
+          {showMobileMenu && (
+            <div className="md:hidden mt-4 space-y-3">
+              {['About', 'Education', 'Projects', 'Skills', 'Experience', 'Contact'].map((item) => (
+                <button
+                  key={item}
+                  onClick={() => {
+                    scrollToSection(item.toLowerCase());
+                    setShowMobileMenu(false);
+                  }}
+                  className="block w-full text-left text-[#8B4513] hover:text-[#A0522D] transition-colors duration-300 font-medium py-2"
+                >
+                  {item}
+                </button>
+              ))}
+            </div>
+          )}
         </div>
-      </button>
-    </div>
-    
-    {/* Mobile Navigation Menu */}
-    {showMobileMenu && (
-      <div className="md:hidden mt-4 space-y-3">
-        {['About', 'Education', 'Projects', 'Skills', 'Experience', 'Contact'].map((item) => (
-          <button
-            key={item}
-            onClick={() => {
-              scrollToSection(item.toLowerCase());
-              setShowMobileMenu(false);
-            }}
-            className="block w-full text-left text-[#8B4513] hover:text-[#A0522D] transition-colors duration-300 font-medium py-2"
-          >
-            {item}
-          </button>
-        ))}
+      </nav>
+
+      {/* Background texture and animated elements */}
+      <div className="fixed inset-0 pointer-events-none overflow-hidden">
+        {/* Hero section background */}
+        <div
+          className="absolute inset-0 bg-cover bg-no-repeat transition-opacity duration-1000"
+          style={{
+            backgroundImage: 'url(/hero-background.png)',
+            backgroundPosition: 'center top',
+            backgroundSize: 'cover',
+            opacity: scrollY < 600 ? 1 : 0,
+            transform: `translateY(${scrollY * 0.1}px)`,
+          }}
+        />
+
+        {/* About section background */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000"
+          style={{
+            backgroundImage: 'url(/pink-background.png)',
+            backgroundSize: 'cover',
+            opacity: scrollY > 600 && scrollY < 1800 ? 1 : 0,
+            transform: `translateY(${scrollY * 0.05}px)`,
+          }}
+        />
+
+        {/* Smoke layer 1 */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000"
+          style={{
+            backgroundImage: 'url(/Greensmoke1.png)',
+            backgroundSize: 'cover',
+            opacity: scrollY > 1400 && scrollY < 4000 ? 1 : 0,
+            transform: `translateY(${scrollY * 0.1}px)`,
+          }}
+        />
+
+        {/* Smoke layer 2 */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000"
+          style={{
+            backgroundImage: 'url(/Greensmoke2.png)',
+            backgroundSize: 'cover',
+            opacity: scrollY > 1600 && scrollY < 4000 ? 1 : 0,
+            transform: `translateY(${scrollY * 0.1}px)`,
+          }}
+        />
+
+        {/* Smoke layer 3 */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000"
+          style={{
+            backgroundImage: 'url(/Greensmoke3.png)',
+            backgroundSize: 'cover',
+            opacity: scrollY > 1800 && scrollY < 4000 ? 1 : 0,
+            transform: `translateY(${scrollY * 0.1}px)`,
+          }}
+        />
+
+        {/* Keep some animated dots for sections without custom backgrounds */}
+        {createDots(8, 'w-2 h-2 bg-[#d4a574]/20 animate-pulse')}
+        {createDots(5, 'w-1 h-1 bg-[#8B4513]/15 animate-ping')}
+
+        {/* Sparkles - reduced since you have custom backgrounds */}
+        <div
+          className="absolute w-3 h-3 bg-[#d4a574] animate-pulse"
+          style={{
+            bottom: '40%',
+            left: '10%',
+            transform: `translateY(${-scrollY * 0.18}px)`,
+            clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)',
+          }}
+        />
       </div>
-    )}
-  </div>
-</nav>
-
-    {/* Background texture and animated elements */}
-<div className="fixed inset-0 pointer-events-none overflow-hidden">
-  {/* Hero section background */}
-  <div
-    className="absolute inset-0 bg-cover bg-no-repeat transition-opacity duration-1000"
-    style={{
-      backgroundImage: 'url(/hero-background.png)',
-      backgroundPosition: 'center top',
-      backgroundSize: 'cover',
-      opacity: scrollY < 600 ? 1 : 0,
-      transform: `translateY(${scrollY * 0.1}px)`,
-    }}
-  />
-
-  {/* About section background */}
-  <div 
-    className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000"
-    style={{
-      backgroundImage: 'url(/pink-background.png)',
-      backgroundSize: 'cover',
-      opacity: scrollY > 600 && scrollY < 1800 ? 1 : 0,
-      transform: `translateY(${scrollY * 0.05}px)`,
-    }}
-  />
-
-  {/* Smoke layer 1 */}
-  <div 
-    className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000"
-    style={{
-      backgroundImage: 'url(/Greensmoke1.png)',
-      backgroundSize: 'cover',
-      opacity: scrollY > 1400 && scrollY < 4000 ? 1 : 0,
-      transform: `translateY(${scrollY * 0.1}px)`,
-    }}
-  />
-
-  {/* Smoke layer 2 */}
-  <div 
-    className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000"
-    style={{
-      backgroundImage: 'url(/Greensmoke2.png)',
-      backgroundSize: 'cover',
-      opacity: scrollY > 1600 && scrollY < 4000 ? 1 : 0,
-      transform: `translateY(${scrollY * 0.1}px)`,
-    }}
-  />
-
-  {/* Smoke layer 3 */}
-  <div 
-    className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000"
-    style={{
-      backgroundImage: 'url(/Greensmoke3.png)',
-      backgroundSize: 'cover',
-      opacity: scrollY > 1800 && scrollY < 4000 ? 1 : 0,
-      transform: `translateY(${scrollY * 0.1}px)`,
-    }}
-  />
-
-  {/* Keep some animated dots for sections without custom backgrounds */}
-  {createDots(8, 'w-2 h-2 bg-[#d4a574]/20 animate-pulse')}
-  {createDots(5, 'w-1 h-1 bg-[#8B4513]/15 animate-ping')}
-
-  {/* Sparkles - reduced since you have custom backgrounds */}
-  <div
-    className="absolute w-3 h-3 bg-[#d4a574] animate-pulse"
-    style={{
-      bottom: '40%',
-      left: '10%',
-      transform: `translateY(${-scrollY * 0.18}px)`,
-      clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)',
-    }}
-  />
-</div>
       {/* Content */}
       <div className="relative z-10">
         {/* Hero Section */}
@@ -250,8 +250,8 @@ const PersonalPortfolio = () => {
                   }}
                 />
                 <p className="absolute bottom-16 md:bottom-60 left-4 md:left-auto md:right-60 text-lg md:text-xl lg:text-2xl text-[#8B4513] font-medium bg-[#f5f2ed]/80 px-3 md:px-4 py-2 rounded-lg backdrop-blur-sm max-w-xs md:max-w-none">
-  Computer Science & Innovation Major
-</p>
+                  Computer Science & Innovation Major
+                </p>
               </div>
 
               {/* Leaf overlay - positioned in front of Jess image */}
@@ -299,14 +299,12 @@ const PersonalPortfolio = () => {
             >
               {/* Frame container for PNG overlay */}
               <div className="flex justify-center">
-                <div className="relative w-96 h-[35rem]">
+                <div className="relative w-72 md:w-96 h-80 md:h-[35rem]">
                   <img
                     src="/me.jpg"
                     alt="Your Photo"
                     className="absolute inset-0 w-full h-full object-cover rounded-lg"
                   />
-
-                  {/* Frame PNG ON TOP */}
                   <img
                     src="/frame1.png"
                     alt="Frame"
@@ -318,13 +316,24 @@ const PersonalPortfolio = () => {
 
               <div className="space-y-6">
                 <p className="text-lg text-[#8B4513]/80 leading-relaxed">
-                  Hi! I'm Jess, a Computer Science major graduating this spring, 2026. I'm passionate
-                  about learning new technologies and incorporating creativity into all of my work. I'm based in Long Island, New York
-                  but currently studying in Burlington, Vermont. I'm looking to develop my skills and employ the knowledge I have leanred in
-                  data science and programming.
+                  Hi! I’m Jess, a Computer Science and Innovation major with a concentration in Artificial Intelligence and a minor in Data Analytics, 
+                  graduating in spring 2026. I’m driven by curiosity and a love for problem-solving 
+                  whether that’s exploring the logic behind algorithms or finding creative ways to turn complex data into actionable insights. 
+                  My studies at Champlain College, combined with leadership as co-president of the Womxn in Technology club and 
+                  hands-on IT support work, have strengthened my technical skills and my ability to communicate and collaborate.
                 </p>
                 <p className="text-lg text-[#8B4513]/80 leading-relaxed">
-                  When I'm not studying, you can find me exploring new technologies, sketching, or diving into the latest creative trends.
+                  My career goal is to build intelligent, privacy-conscious systems that help people in meaningful ways.
+                  I’m especially interested in data science and artificaial intelligence 
+                  and I’m eager to work on projects where thoughtful design and robust engineering come together to solve real-world challenges.
+                </p>
+                <p className="text-lg text-[#8B4513]/80 leading-relaxed">
+                  Outside of coding, I love sketching, exploring new creative trends, and discovering emerging technologies. 
+                  These hobbies keep me inspired and fuel the imagination I bring to every project.
+                  Skills: Python, JavaScript/TypeScript, React, SQL, and experience with data analysis libraries such as Pandas and NumPy.
+                </p>
+                 <p className="text-lg text-[#8B4513]/80 leading-relaxed">
+                  Skills: Python, JavaScript/TypeScript, React, SQL, and experience with data analysis libraries such as Pandas and NumPy.
                 </p>
               </div>
             </div>
