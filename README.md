@@ -28,4 +28,4 @@ This will launch the site in your default browser at http://localhost:3000.
 ## Planned enhancement
 
 I plan to add more projects in greater details,
-creating a separate page to host them so if you are a recruiter, keep in touch
+creating a separate page to host them so if you are a recruiter, keep in touch!
