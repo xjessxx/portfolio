@@ -212,11 +212,11 @@ const PersonalPortfolio = () => {
           }}
         />
 
-        {/* Keep some animated dots for sections without custom backgrounds */}
+        {/* Dots for sections without backgrounds */}
         {createDots(8, 'w-2 h-2 bg-[#d4a574]/20 animate-pulse')}
         {createDots(5, 'w-1 h-1 bg-[#8B4513]/15 animate-ping')}
 
-        {/* Sparkles - reduced since you have custom backgrounds */}
+        {/* Sparkles */}
         <div
           className="absolute w-3 h-3 bg-[#d4a574] animate-pulse"
           style={{
@@ -254,7 +254,7 @@ const PersonalPortfolio = () => {
                 </p>
               </div>
 
-              {/* Leaf overlay - positioned in front of Jess image */}
+              {/* Leaf overlay */}
               <div
                 className="absolute inset-0 pointer-events-none z-20"
                 style={{
@@ -297,7 +297,7 @@ const PersonalPortfolio = () => {
                 opacity: scrollY > 600 ? Math.min(1, (scrollY - 600) / 300) : 0,
               }}
             >
-              {/* Frame container for PNG overlay */}
+              {/* Frame container */}
               <div className="flex justify-center">
                 <div className="relative w-72 md:w-96 h-80 md:h-[35rem]">
                   <img
@@ -316,23 +316,23 @@ const PersonalPortfolio = () => {
 
               <div className="space-y-6">
                 <p className="text-lg text-[#8B4513]/80 leading-relaxed">
-                  Hi! I’m Jess, a Computer Science and Innovation major with a concentration in Artificial Intelligence and a minor in Data Analytics, 
-                  graduating in spring 2026. I’m driven by curiosity and a love for problem-solving 
-                  whether that’s exploring the logic behind algorithms or finding creative ways to turn complex data into actionable insights. 
-                  My studies at Champlain College, combined with leadership as co-president of the Womxn in Technology club and 
+                  Hi! I’m Jess, a Computer Science and Innovation major with a concentration in Artificial Intelligence and a minor in Data Analytics,
+                  graduating in spring 2026. I’m driven by curiosity and a love for problem-solving
+                  whether that’s exploring the logic behind algorithms or finding creative ways to turn complex data into actionable insights.
+                  My studies at Champlain College, combined with leadership as co-president of the Womxn in Technology club and
                   hands-on IT support work, have strengthened my technical skills and my ability to communicate and collaborate.
                 </p>
                 <p className="text-lg text-[#8B4513]/80 leading-relaxed">
                   My career goal is to build intelligent, privacy-conscious systems that help people in meaningful ways.
-                  I’m especially interested in data science and artificaial intelligence 
+                  I’m especially interested in data science and artificaial intelligence
                   and I’m eager to work on projects where thoughtful design and robust engineering come together to solve real-world challenges.
                 </p>
                 <p className="text-lg text-[#8B4513]/80 leading-relaxed">
-                  Outside of coding, I love sketching, exploring new creative trends, and discovering emerging technologies. 
+                  Outside of coding, I love sketching, exploring new creative trends, and discovering emerging technologies.
                   These hobbies keep me inspired and fuel the imagination I bring to every project.
                   Skills: Python, JavaScript/TypeScript, React, SQL, and experience with data analysis libraries such as Pandas and NumPy.
                 </p>
-                 <p className="text-lg text-[#8B4513]/80 leading-relaxed">
+                <p className="text-lg text-[#8B4513]/80 leading-relaxed">
                   Skills: Python, JavaScript/TypeScript, React, SQL, and experience with data analysis libraries such as Pandas and NumPy.
                 </p>
               </div>
@@ -378,7 +378,7 @@ const PersonalPortfolio = () => {
                 </div>
               </div>
 
-              {/* Frame container for PNG overlay */}
+              {/* Frame container */}
               <div className="flex justify-center">
                 <div className="relative w-72 h-72">
                   {/* photo BEHIND the frame */}
@@ -567,7 +567,7 @@ const PersonalPortfolio = () => {
                   <p className="text-xl text-[#8B4513]/80">ChampSupport</p>
                   <p className="text-[#8B4513]/70">September 2025 - Present</p>
                   <p className="text-[#8B4513]/80 leading-relaxed">
-                    As an IT helpdesk tech, I have to respond to daily tickets and phine calls, walking people though troubleshooting
+                    As an IT helpdesk tech, I have to respond to daily tickets and phone calls, walking people though troubleshooting
                     there electronic & or system problems. I also have to manage software installations for campus needs
                     and maintenence on systems such as printers, projectors, etc.
                   </p>
